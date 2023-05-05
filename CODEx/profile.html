@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
+
+<html>
+    <head>
+        <link rel="stylesheet" href="css/profile.css">
+        <title>Profile</title>
+    </head>
+    <header>
+      <div class="container">
+          <div class="logo">
+            <a href="home.html">
+              <img src="images/trans_logo.png" alt="Logo">
+            </a>
+              
+          </div>
+          <div class="search">
+              <input type="text" placeholder="Search">
+              <button type="submit"><i class="fas fa-search"></i></button>
+          </div>
+          <div class="icons">
+              <div class="notification">
+                  <i class="fas fa-bell"></i>
+              </div>
+              <div class="profile">
+                <a href="profile.html">
+                  <img src="images/igop.jpg" alt="Profile Picture">
+                  </a>
+              </div>
+              <div class="settings">
+                  <i class="fas fa-cog"></i>
+              </div>
+          </div>
+      </div>
+  </header>
+
+    <body>
+      <!--[if lt IE 7]>
+          <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+      <![endif]-->
+
+      <div class="container-body">
+        <div class="banner">
+            <img src="images/banner.jpg">
+          </div>
+          <div class="profile-pic"  ></div>
+        <div class="name-body">
+        <p><h2>Mackenzie B. Dela Cruz</h2></p>
+        <p> <h3>UI/UX designer (char langs)  </h3></p>
+        <p> <h4> Cebu Institute of Technology </h4></p>
+        <p> <h4> VRama Cebu City  </h4></p>
+        <button type="submit" class="message-btn" >Message Me</button>
+        <button type="submit" class="follow" >Follo...</button>
+        </div>
+      </div>
+
+      <div class="container-content">
+        <div><p><h2>About Me</h2></p></div>
+
+      </div>
+      <div class="container-content">
+        <div class="Experience"><p><h2>Experience</h2></p></div>
+      </div>
+      <div class="container-content">
+        <div class="personalProject">
+          <h2>Personal Project</h2>
+          <button onclick="openAddListModal()">Add List</button>
+          <div id="lists-container"></div>
+        </div>
+      </div>
+  
+      <!-- Modal Popup for Adding a List -->
+      <div id="addListModal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeAddListModal()">&times;</span>
+          <h2>Add List</h2>
+          <form onsubmit="addList(); return false;">
+            <label for="list-title">Title:</label>
+            <input type="text" id="list-title" required>
+            <label for="list-link">Link:</label>
+            <input type="text" id="list-link" required>
+            <button type="submit">Add List</button>
+          </form>
+        </div>
+      </div>
+      
+
+      
+
+
+      <!--               Javascript Goes Here            -->
+
+
+  <script>
+  const listsContainer = document.getElementById("lists-container");
+  const addListModal = document.getElementById("addListModal");
+
+  let lists = [];
+
+  function renderLists() {
+  listsContainer.innerHTML = "";
+
+  lists.forEach((list, index) => {
+    const listElement = document.createElement("div");
+    listElement.className = "list";
+    listElement.innerHTML = `
+      <h3 onclick="toggleDescription(${index})">${list.title}</h3>
+      <div class="list-description" id="list-description-${index}" style="display:none;">
+        <a href="${list.link}" target="_self">${list.link}</a>
+        <button onclick="deleteList(${index})">Delete</button>
+      </div>
+    `;
+
+    const description = listElement.querySelector('.list-description');
+    description.style.whiteSpace = 'nowrap';
+    description.style.overflow = 'hidden';
+    description.style.textOverflow = 'ellipsis';
+    description.style.maxHeight = '50px';
+
+    listsContainer.appendChild(listElement);
+  });
+}
+
+
+  function toggleDescription(index) {
+    const description = document.getElementById(`list-description-${index}`);
+    description.style.display = description.style.display === 'none' ? 'block' : 'none';
+  }
+
+  function openAddListModal() {
+    addListModal.style.display = "block";
+  }
+
+  function closeAddListModal() {
+    addListModal.style.display = "none";
+  }
+
+  function addList() {
+  const listTitle = document.getElementById("list-title").value;
+  const listLink = document.getElementById("list-link").value;
+  
+  
+
+  lists.push({ title: listTitle, link: listLink });
+
+  closeAddListModal();
+  renderLists();
+}
+
+
+  function deleteList(index) {
+    lists.splice(index, 1);
+    renderLists();
+  }
+  </script>
+     
+  </body>
+</html>

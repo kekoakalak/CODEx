@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!-<![endif]-->
+<html>
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" href="css/dsa_style.css">
+</head>
+<body>
+    <!--[if lt IE 7]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="home.html">
+                    <img src="images/trans_logo.png" alt="Logo">
+                </a>
+            </div>
+            <div class="search">
+                <input type="text" placeholder="Search">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="icons">
+                <div class="notification">
+                    <i class="fas fa-bell"></i>
+                </div>
+                <div class="profile">
+                    <a href="profile.html">
+                        <img src="images/igop.jpg" alt="Profile Picture">
+                    </a>
+                </div>
+                <div class="settings">
+                    <i class="fas fa-cog"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="#">Jobs</a></li>
+            <li><a href="#">Messages</a></li>
+        </ul>
+    </nav>
+    <div class="welcome-interview">
+        <h2>Welcome to</h2>
+      <h1>CODEx Interview</h1>
+      </div>
+      <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+      
+
+    
+   
+        <div class="container">
+            <h1>Data Structures and Algorithms Interview Practice</h1>
+            <div class="question">
+                <h2>Question 1</h2>
+                <p>Implement a function that takes an array of integers and returns the sum of the two largest integers in the array.</p>
+                <textarea id="q1-input"></textarea>
+                <button onclick="checkQ1()">Check Answer</button>
+                <p id="q1-output"></p>
+            </div>
+    
+            <div class="question">
+                <h2>Question 2</h2>
+                <p>Given a string, write a function to determine if it is a palindrome.</p>
+                <textarea id="q2-input"></textarea>
+                <button onclick="checkQ2()">Check Answer</button>
+                <p id="q2-output"></p>
+            </div>
+    
+            <div class="question">
+                <h2>Question 3</h2>
+                <p>Implement a function that takes a string as input and returns the first non-repeated character in the string. If there is no non-repeated character, return null.</p>
+                <textarea id="q3-input"></textarea>
+                <button onclick="checkQ3()">Submit</button>
+                <p id="q3-output"></p>
+            </div>
+        </div>  
+        <script>
+            // Function to check if a character in a string is repeated
+            function isCharRepeated(str, char) {
+                let count = 0;
+                for (let i = 0; i < str.length; i++) {
+                    if (str[i] === char) {
+                        count++;
+                    }
+                }
+                return count > 1;
+            }
+    
+            // Function to find the first non-repeated character in a string
+            function findFirstNonRepeatedChar(str) {
+                for (let i = 0; i < str.length; i++) {
+                    let char = str[i];
+                    if (!isCharRepeated(str, char)) {
+                        return char;
+                    }
+                }
+                return null;
+            }
+    
+            // Function to handle submission of question 1
+            function checkQ1() {
+                let input = document.getElementById("q1-input").value;
+                let output = document.getElementById("q1-output");
+                let arr = input.split(' ').map(Number);
+                if (arr.length < 2) {
+                    output.innerHTML = "Please enter an array of at least two integers.";
+                } else {
+                    arr.sort(function(a, b){return b-a});
+                    output.innerHTML = "The sum of the two largest integers is: " + (arr[0] + arr[1]);
+                }
+            }
+    
+            // Function to handle submission of question 2
+            function checkQ2() {
+                let input = document.getElementById("q2-input").value;
+                let output = document.getElementById("q2-output");
+                let reversed = input.split('').reverse().join('');
+                if (input === reversed) {
+                    output.innerHTML = "The string is a palindrome.";
+                } else {
+                    output.innerHTML = "The string is not a palindrome.";
+                }
+            }
+    
+            // Function to handle submission of question 3
+            function checkQ3() {
+                let input = document.getElementById("q3-input").value;
+                let output = document.getElementById("q3-output");
+                let result = findFirstNon-RepeatedChar(input);
+                    if (result !== null) {
+                    output.innerHTML = "The first non-repeated character is: " + result;
+                    } else {
+                    output.innerHTML = "There is no non-repeated character in the string.";
+                }
+            }
+</script>
+
+</body>
+    

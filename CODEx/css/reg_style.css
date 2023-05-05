@@ -1,0 +1,230 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  .logo {
+    flex: 0 0 auto;
+    margin-right: 20px;
+    margin-left: 200px;
+  }
+  .logo img {
+    width: 280px; /* set the width to 40 pixels */
+    height: 80px; /* set the height to 40 pixels */
+  }
+  
+  
+  nav {
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+  }
+  
+  nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav li {
+    margin-right: 16px;
+  }
+  
+  nav a {
+    color: rgba(0,0,0,0.6);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 12px;
+    border-radius: 24px;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  nav a:hover {
+    background-color: rgba(0,0,0,0.08);
+  }
+  
+  nav a.active {
+    color: #0a66c2;
+    background-color: rgba(0,0,0,0.08);
+  }
+
+  nav ul li {
+  border-right: 2px solid #ddd;
+}
+
+nav ul li:last-child {
+  border-right: none;
+}
+  
+ /* Center the login form */
+ .login-form {
+    width: 300px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  /* Style the login form inputs */
+  .login-form input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid #ddd;
+  }
+  /* Style the login form buttons */
+  .login-form button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
+  /* Style the login form Google button */
+  .login-form .google-btn {
+    background-color: #dd4b39;
+  }
+
+  .login-form {
+  position: absolute;
+  top: 50%;
+  right: 500px;
+  transform: translateY(-50%);
+  width: 400px;
+  text-align: center;
+  margin-right: 20px;
+}
+
+/* Curve the buttons */
+.login-form button {
+    border-radius: 24px;
+  }
+  
+  /* Style the Login with Google button */
+  .login-form .google-btn {
+    background-color: #FFFFFF;
+    color: #666666;
+    border: 2px solid #CCCCCC;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .login-form .google-btn:hover {
+    background-color: #EEEEEE;
+    color: #666666;
+    border: 2px solid #CCCCCC;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Style the Sign in button */
+  .login-form .sign-in-btn {
+    background-color: #0A66C2;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 24px;
+    padding: 16px;
+    width: 100%;
+    font-size: 18px;
+    margin-top: 16px;
+  }
+  
+  .login-form .sign-in-btn:hover {
+    background-color: #004182;
+    color: #FFFFFF;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .image img {
+    padding-top: 2%;
+    width: 650px;
+    height: 650px;
+    margin-left: 200px;
+  }
+/* ----------------------------------------------------------*/
+/* 
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+ 
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #0d3648;
+    color: #fff;
+  }
+  
+  .logo-container img {
+    max-height: 40px;
+  }
+  
+  nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav li {
+    margin-right: 20px;
+  }
+  
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+  } */
+
+  .login-form input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    font-size: 16px;
+    }
+    
+    /* Style the login form buttons */
+    .login-form button {
+    background-color: #0a66c2;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 4px;
+    font-size: 16px;
+    }
+    
+    /* Style the login form Google button */
+    .login-form .google-btn {
+    background-color: #fff;
+    color: #0a66c2;
+    border: 1px solid #0a66c2;
+    border-radius: 4px;
+    }
+
+    .login-form {
+       
+        margin: 0 auto;
+    
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 50px;
+        border-radius: 10px;
+        }
+
+        /* REGISTRATION CSS */
+
+        
